@@ -63,6 +63,7 @@ static const uint8_t A7 = 21;
 
 #define digitalPinToInterrupt(p)  ((p) == 2 ? 0 : ((p) == 3 ? 1 : NOT_AN_INTERRUPT))
 //TODO: AMMAR: definethis section as ARDUINO_MAIN
+#define ARDUINO_MAIN //AmmarRaafat
 //#ifdef ARDUINO_MAIN
 
 // On the Arduino board, digital pins are also used
