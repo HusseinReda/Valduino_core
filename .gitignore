@@ -4,4 +4,6 @@
 /pinMode/.Debuglinker
 /pinMode/.HardwareDebuglinker
 /pinMode/.info
-/pinMode/.info
+/pinMode/.project
+/pinMode/.pinMode HardwareDebug.launch
+/pinMode/pinMode Debug.launch
