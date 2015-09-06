@@ -217,7 +217,7 @@ const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
 };
 
 //#endif
-//TODO: HUSSEIN: ADD VALDUINO DEFINE HERE PLZ
+//HUSSEIN: ADD VALDUINO DEFINE HERE PLZ
 #ifdef VALDUINO
 const uint32_t digital_pin_to_port_PGM[] = {
 	NOT_A_PORT,
