@@ -17,7 +17,6 @@
 /************************************************************************/
 
 #include "iodefine.h"
-#include <stdint.h>
 #include "Arduino.h"
 
 #ifdef CPPAPP

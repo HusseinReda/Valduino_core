@@ -26,18 +26,21 @@
 #include "wiring_private.h"
 #include "pins_arduino.h"
 
+
+// FIXME: pinMode to support RL78 uC
 void pinMode(uint8_t pin, uint8_t mode)
 {
-	uint8_t bit = digitalPinToBitMask(pin);
-	uint8_t port = digitalPinToPort(pin);
+	uint8_t bit = digitalPinToBitMask(pin);		// TODO: : Hossam: Create this function plz :p
+	uint32_t port = digitalPinToPort(pin);		// HUSSEIN: Create this function plz :)
 	volatile uint8_t *reg, *out;
 
 	if (port == NOT_A_PIN) return;
 
 	// JWS: can I let the optimizer do this?
-	reg = portModeRegister(port);
-	out = portOutputRegister(port);
+	reg = portModeRegister(port); 				// TODO: Hussein: Create this function plz :)
+	out = portOutputRegister(port);				// TODO: Hussein: Create this function plz :)
 
+//TODO: Ammar & asmaa & magdy : 3eeeesh ya 3ammaaaaar enta we asmaaaaaaa we magdyyyyyy :D
 	if (mode == INPUT) { 
 		uint8_t oldSREG = SREG;
                 cli();
