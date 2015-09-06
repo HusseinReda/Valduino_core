@@ -62,8 +62,8 @@ static const uint8_t A7 = 21;
 #define digitalPinToPCMSKbit(p) (((p) <= 7) ? (p) : (((p) <= 13) ? ((p) - 8) : ((p) - 14)))
 
 #define digitalPinToInterrupt(p)  ((p) == 2 ? 0 : ((p) == 3 ? 1 : NOT_AN_INTERRUPT))
-
-#ifdef ARDUINO_MAIN
+//TODO: AMMAR: definethis section as ARDUINO_MAIN
+//#ifdef ARDUINO_MAIN
 
 // On the Arduino board, digital pins are also used
 // for the analog output (software PWM).  Analog input
@@ -216,9 +216,9 @@ const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
 	NOT_ON_TIMER,
 };
 
-#endif
-
-#ifdef VALDUINO
+//#endif
+//TODO: HUSSEIN: ADD VALDUINO DEFINE HERE
+//#ifdef VALDUINO
 const uint32_t digital_pin_to_port_PGM[] = {
 	NOT_A_PORT,
 	&P15,
@@ -322,7 +322,7 @@ const uint32_t digital_pin_to_port_PGM[] = {
 	&P12,
 	&P12,
 };
-#endif
+//#endif
 
 // These serial port names are intended to allow libraries and architecture-neutral
 // sketches to automatically default to the correct port name for a particular type
