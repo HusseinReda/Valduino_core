@@ -326,6 +326,46 @@ const uint32_t digital_pin_to_port_PGM[] = {
 	P12,
 	P12,
 };
+
+//FIXME: add array to program memory
+const uint32_t  port_to_output_PGM[] = {
+	&P0,
+	&P1,
+	NOT_A_PORT,
+	&P3,
+	&P4,
+	&P5,
+	&P6,
+	&P7,
+	&P8,
+	&P9,
+	&P10,
+	NOT_A_PORT,
+	&P12,
+	&P13,
+	&P14,
+	&P15,
+};
+//FIXME: add array to program memory
+//FIXME: port 13 doesn't have a macro PM13
+const uint32_t port_to_mode_PGM[] = {
+		&PM0,
+		&PM1,
+		NOT_A_PORT,
+		&PM3,
+		&PM4,
+		&PM5,
+		&PM6,
+		&PM7,
+		&PM8,
+		&PM9,
+		&PM10,
+		NOT_A_PORT,
+		&PM12,
+		NOT_A_PORT,
+		&PM14,
+		&PM15,
+};
 #endif
 
 // These serial port names are intended to allow libraries and architecture-neutral

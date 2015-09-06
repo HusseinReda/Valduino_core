@@ -37,8 +37,8 @@ void pinMode(uint8_t pin, uint8_t mode)
 	if (port == NOT_A_PIN) return;
 
 	// JWS: can I let the optimizer do this?
-	reg = portModeRegister(port); 				// TODO: Hussein: Create this function plz :)
-	out = portOutputRegister(port);				// TODO: Hussein: Create this function plz :)
+	reg = portModeRegister(port); 				// Hussein: Create this function plz :)
+	out = portOutputRegister(port);				// Hussein: Create this function plz :)
 
 //TODO: Ammar & asmaa & magdy : 3eeeesh ya 3ammaaaaar enta we asmaaaaaaa we magdyyyyyy :D
 	if (mode == INPUT) { 
