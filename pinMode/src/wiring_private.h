@@ -23,10 +23,12 @@
 #ifndef WiringPrivate_h
 #define WiringPrivate_h
 //TODO: MAGDY: define this as ARDUINO_MAIN
+#ifdef ARDUINO_MAIN
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <stdio.h>
 #include <stdarg.h>
+#endif
 
 #include "Arduino.h"
 
