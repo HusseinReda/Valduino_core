@@ -1,0 +1,9 @@
+pinMode/.settings/
+.cproject
+.Debuglinker
+.HardwareDebuglinker
+.info
+.project
+custom.bat
+pinMode Debug.launch
+pinMode HardwareDebug.launch
