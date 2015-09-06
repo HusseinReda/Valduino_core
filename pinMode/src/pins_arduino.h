@@ -218,7 +218,7 @@ const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
 
 //#endif
 //TODO: HUSSEIN: ADD VALDUINO DEFINE HERE PLZ
-//#ifdef VALDUINO
+#ifdef VALDUINO
 const uint32_t digital_pin_to_port_PGM[] = {
 	NOT_A_PORT,
 	&P15,
@@ -322,7 +322,7 @@ const uint32_t digital_pin_to_port_PGM[] = {
 	&P12,
 	&P12,
 };
-//#endif
+#endif
 
 // These serial port names are intended to allow libraries and architecture-neutral
 // sketches to automatically default to the correct port name for a particular type
