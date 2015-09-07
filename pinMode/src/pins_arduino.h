@@ -24,11 +24,16 @@
 #define Pins_Arduino_h
 
 /*
- * define the P and PM
+ * To define the P and PM include iodefine.h
  */
 #ifndef  __INTRINSIC_FUNCTIONS
 #include "iodefine.h"
 #endif
+
+/*
+ *  This macro takes the bit number and returns the bit mask
+ */
+#define _BV(bit) (1<<bit)	//FIXME: Move this macro to a suitable library
 
 #ifndef VALDUINO
 #define VALDUINO
@@ -228,6 +233,7 @@ const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
 
 //HUSSEIN: ADD VALDUINO DEFINE HERE PLZ
 #ifdef VALDUINO
+
 //FIXME: add array to program memory
 const uint8_t digital_pin_to_port_PGM[] = {
 	NOT_A_PORT,
@@ -352,6 +358,7 @@ const uint8_t *  port_to_output_PGM[] = {
 	&P14,
 	&P15,
 };
+
 //FIXME: add array to program memory
 //FIXME: port 13 doesn't have a macro PM13
 const uint8_t * port_to_mode_PGM[] = {
@@ -372,6 +379,111 @@ const uint8_t * port_to_mode_PGM[] = {
 	&PM14,
 	&PM15,
 };
+
+const uint8_t digital_pin_to_bit_mask_PGM[] = {
+	NOT_A_PIN,
+	_BV(3),	/*P15*/
+	_BV(2),
+	_BV(1),
+	_BV(0),
+	_BV(7),	/*P4*/
+	_BV(6),
+	_BV(5),
+	_BV(4),
+	_BV(3),
+	_BV(2),
+	_BV(1),
+	_BV(0),
+	NOT_A_PIN,
+	_BV(4),	/*P12*/
+	_BV(3),
+	_BV(7),	/*P13*/
+	_BV(2),
+	_BV(1),
+	NOT_A_PIN,
+	NOT_A_PIN,
+	NOT_A_PIN,
+	NOT_A_PIN,
+	NOT_A_PIN,
+	_BV(0),	/*P6*/
+	_BV(1),
+	_BV(2),
+	_BV(3),
+	_BV(4),
+	_BV(5),
+	_BV(6),
+	_BV(7),
+	_BV(4),	/*P15*/
+	_BV(5),
+	_BV(0),	/*P0*/
+	_BV(6),	/*P15*/
+	_BV(7),
+	_BV(0),	/*P14*/
+	_BV(0),	/*P13*/
+	_BV(7),	/*P7*/
+	_BV(6),
+	_BV(5),
+	_BV(4),
+	NOT_A_PIN,
+	_BV(3),	/*P7*/
+	_BV(2),
+	_BV(1),
+	_BV(0),
+	_BV(3),	/*P0*/
+	_BV(2),	/*P3*/
+	_BV(0),
+	_BV(7),	/*P1*/
+	_BV(6),
+	NOT_A_PIN,
+	_BV(5),	/*P1*/
+	_BV(1),	/*P3*/
+	_BV(0),	/*P5*/
+	_BV(1),
+	_BV(2),
+	_BV(3),
+	_BV(4),	/*P1*/
+	_BV(3),
+	_BV(2),
+	_BV(1),
+	_BV(0),
+	_BV(4),	/*P5*/
+	_BV(5),
+	_BV(6),
+	_BV(7),	/*P10*/
+	_BV(6),
+	_BV(5),
+	_BV(4),
+	_BV(3),	/*P3*/
+	_BV(4),
+	_BV(7),	/*P5*/
+	_BV(0),	/*P8*/
+	_BV(1),
+	_BV(2),
+	_BV(3),
+	_BV(4),
+	_BV(5),
+	_BV(6),
+	_BV(7),
+	_BV(0),	/*P9*/
+	_BV(1),
+	_BV(2),
+	_BV(3),
+	_BV(4),
+	_BV(5),
+	_BV(6),
+	_BV(7),
+	_BV(0),	/*P10*/
+	_BV(1),
+	_BV(2),
+	_BV(3),
+	_BV(2),	/*P0*/
+	_BV(7),	/*P12*/
+	_BV(6),
+	_BV(1),	/*P0*/
+	_BV(5),	/*P12*/
+	_BV(0),
+};
+
 #endif
 
 // These serial port names are intended to allow libraries and architecture-neutral

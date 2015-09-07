@@ -30,7 +30,7 @@
 // FIXME: pinMode to support RL78 uC
 void pinMode(uint8_t pin, uint8_t mode)
 {
-	uint8_t bit = digitalPinToBitMask(pin);		// TODO: : Hossam: Create this function plz :p
+	uint8_t bit = digitalPinToBitMask(pin);		// Hossam: Create this function plz :p
 	uint8_t port = digitalPinToPort(pin);		// HUSSEIN: Create this function plz :)
 	volatile uint8_t *reg, *out;
 
@@ -42,22 +42,22 @@ void pinMode(uint8_t pin, uint8_t mode)
 
 //TODO: Ammar & asmaa & magdy : 3eeeesh ya 3ammaaaaar enta we asmaaaaaaa we magdyyyyyy :D
 	if (mode == INPUT) { 
-		uint8_t oldSREG = SREG;
+		//uint8_t oldSREG = SREG;
                 cli();
 		*reg &= ~bit;
 		*out &= ~bit;
-		SREG = oldSREG;
+		//SREG = oldSREG;
 	} else if (mode == INPUT_PULLUP) {
-		uint8_t oldSREG = SREG;
+		//uint8_t oldSREG = SREG;
                 cli();
 		*reg &= ~bit;
 		*out |= bit;
-		SREG = oldSREG;
+		//SREG = oldSREG;
 	} else {
-		uint8_t oldSREG = SREG;
+		//uint8_t oldSREG = SREG;
                 cli();
 		*reg |= bit;
-		SREG = oldSREG;
+		//SREG = oldSREG;
 	}
 }
 

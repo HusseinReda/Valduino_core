@@ -175,7 +175,7 @@ extern const uint8_t PROGMEM digital_pin_to_timer_PGM[];
 // These perform slightly better as macros compared to inline functions
 //
 #define digitalPinToPort(P) digital_pin_to_port_PGM[P]
-#define digitalPinToBitMask(P) ( pgm_read_byte( digital_pin_to_bit_mask_PGM + (P) ) )
+#define digitalPinToBitMask(P) digital_pin_to_bit_mask_PGM[P]
 #define digitalPinToTimer(P) ( pgm_read_byte( digital_pin_to_timer_PGM + (P) ) )
 #define analogInPinToBit(P) (P)
 //http://garretlab.web.fc2.com/en/arduino/inside/arduino/Arduino.h/portOutputRegister.html
