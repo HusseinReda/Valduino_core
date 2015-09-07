@@ -183,12 +183,13 @@ extern const uint8_t PROGMEM digital_pin_to_timer_PGM[];
 #define portInputRegister(P) ( (volatile uint8_t *)( pgm_read_word( port_to_input_PGM + (P))) )
 #define portModeRegister(P) port_to_mode_PGM[P];
 
-#define NOT_A_PIN 0
-#define NOT_A_PORT 0
+#define NOT_A_PIN 255
+#define NOT_A_PORT 255
 
 #define NOT_AN_INTERRUPT -1
 
 #ifdef VALDUINO
+#define _P0 0
 #define _P1 1
 #define _P2 2
 #define _P3 3
