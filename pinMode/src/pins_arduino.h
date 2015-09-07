@@ -23,6 +23,12 @@
 #ifndef Pins_Arduino_h
 #define Pins_Arduino_h
 
+/*
+ * define the P and PM
+ */
+#ifndef  __INTRINSIC_FUNCTIONS
+#include "iodefine.h"
+#endif
 
 #ifndef VALDUINO
 #define VALDUINO
@@ -349,22 +355,22 @@ const uint8_t *  port_to_output_PGM[] = {
 //FIXME: add array to program memory
 //FIXME: port 13 doesn't have a macro PM13
 const uint8_t * port_to_mode_PGM[] = {
-		&PM0,
-		&PM1,
-		NOT_A_PORT,
-		&PM3,
-		&PM4,
-		&PM5,
-		&PM6,
-		&PM7,
-		&PM8,
-		&PM9,
-		&PM10,
-		NOT_A_PORT,
-		&PM12,
-		NOT_A_PORT,
-		&PM14,
-		&PM15,
+	&PM0,
+	&PM1,
+	NOT_A_PORT,
+	&PM3,
+	&PM4,
+	&PM5,
+	&PM6,
+	&PM7,
+	&PM8,
+	&PM9,
+	&PM10,
+	NOT_A_PORT,
+	&PM12,
+	NOT_A_PORT,
+	&PM14,
+	&PM15,
 };
 #endif
 
