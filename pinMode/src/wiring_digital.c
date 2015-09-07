@@ -31,7 +31,7 @@
 void pinMode(uint8_t pin, uint8_t mode)
 {
 	uint8_t bit = digitalPinToBitMask(pin);		// TODO: : Hossam: Create this function plz :p
-	uint32_t port = digitalPinToPort(pin);		// HUSSEIN: Create this function plz :)
+	uint8_t port = digitalPinToPort(pin);		// HUSSEIN: Create this function plz :)
 	volatile uint8_t *reg, *out;
 
 	if (port == NOT_A_PIN) return;

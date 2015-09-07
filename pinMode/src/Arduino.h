@@ -189,21 +189,21 @@ extern const uint8_t PROGMEM digital_pin_to_timer_PGM[];
 #define NOT_AN_INTERRUPT -1
 
 #ifdef VALDUINO
-#define P1 1
-#define P2 2
-#define P3 3
-#define P4 4
-#define P5 5
-#define P6 6
-#define P7 7
-#define P8 8
-#define P9 9
-#define P10 10
-#define P11 11
-#define P12 12
-#define P13 13
-#define P14 14
-#define P15 15
+#define _P1 1
+#define _P2 2
+#define _P3 3
+#define _P4 4
+#define _P5 5
+#define _P6 6
+#define _P7 7
+#define _P8 8
+#define _P9 9
+#define _P10 10
+#define _P11 11
+#define _P12 12
+#define _P13 13
+#define _P14 14
+#define _P15 15
 
 #endif
 
