@@ -28,6 +28,7 @@
  */
 #ifndef  __INTRINSIC_FUNCTIONS
 #include "iodefine.h"
+#include "iodefine_ext.h"
 #endif
 
 /*
@@ -378,6 +379,25 @@ const uint8_t * port_to_mode_PGM[] = {
 	NOT_A_PORT,
 	&PM14,
 	&PM15,
+};
+
+const uint8_t * port_to_pullup_PGM[] = {
+	&PU0,
+	&PU1,
+	NOT_A_PORT,
+	&PU3,
+	&PU4,
+	&PU5,
+	&PU6,
+	&PU7,
+	NOT_A_PORT,
+	NOT_A_PORT,
+	&PU10,
+	NOT_A_PORT,
+	&PU12,
+	NOT_A_PORT,
+	&PU14,
+	&PU15,
 };
 
 const uint8_t digital_pin_to_bit_mask_PGM[] = {

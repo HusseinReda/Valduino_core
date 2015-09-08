@@ -32,31 +32,34 @@ void pinMode(uint8_t pin, uint8_t mode)
 {
 	uint8_t bit = digitalPinToBitMask(pin);		// Hossam: Create this function plz :p
 	uint8_t port = digitalPinToPort(pin);		// HUSSEIN: Create this function plz :)
-	volatile uint8_t *reg, *out;
+	volatile uint8_t *reg, *out, *pull;
 
 	if (port == NOT_A_PIN) return;
 
 	// JWS: can I let the optimizer do this?
 	reg = portModeRegister(port); 				// Hussein: Create this function plz :)
 	out = portOutputRegister(port);				// Hussein: Create this function plz :)
+	pull = portPullRegister(port);
 
-//TODO: Ammar & asmaa & magdy : 3eeeesh ya 3ammaaaaar enta we asmaaaaaaa we magdyyyyyy :D
+// Ammar & asmaa & magdy : 3eeeesh ya 3ammaaaaar enta we asmaaaaaaa we magdyyyyyy :D
 	if (mode == INPUT) { 
 		//uint8_t oldSREG = SREG;
-                cli();
-		*reg &= ~bit;
+        //cli();
+        //FIXME: check this info -> Set all the ports by default PM as an input in the init function
+		*reg |= bit;
 		*out &= ~bit;
 		//SREG = oldSREG;
 	} else if (mode == INPUT_PULLUP) {
 		//uint8_t oldSREG = SREG;
-                cli();
-		*reg &= ~bit;
-		*out |= bit;
+                //cli();
+		*reg |= bit;
+		//*out |= bit;
+		*pull |= bit;
 		//SREG = oldSREG;
 	} else {
 		//uint8_t oldSREG = SREG;
-                cli();
-		*reg |= bit;
+                //cli();
+		*reg &= ~bit;
 		//SREG = oldSREG;
 	}
 }
@@ -140,7 +143,7 @@ static void turnOffPWM(uint8_t timer)
 
 void digitalWrite(uint8_t pin, uint8_t val)
 {
-	uint8_t timer = digitalPinToTimer(pin);
+	//uint8_t timer = digitalPinToTimer(pin); // TODO:
 	uint8_t bit = digitalPinToBitMask(pin);
 	uint8_t port = digitalPinToPort(pin);
 	volatile uint8_t *out;
@@ -149,7 +152,7 @@ void digitalWrite(uint8_t pin, uint8_t val)
 
 	// If the pin that support PWM output, we need to turn it off
 	// before doing a digital write.
-	if (timer != NOT_ON_TIMER) turnOffPWM(timer);
+	//if (timer != NOT_ON_TIMER) turnOffPWM(timer);
 
 	out = portOutputRegister(port);
 

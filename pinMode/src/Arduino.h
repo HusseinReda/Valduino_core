@@ -180,8 +180,9 @@ extern const uint8_t PROGMEM digital_pin_to_timer_PGM[];
 #define analogInPinToBit(P) (P)
 //http://garretlab.web.fc2.com/en/arduino/inside/arduino/Arduino.h/portOutputRegister.html
 #define portOutputRegister(P) port_to_output_PGM[P]
+#define portPullRegister(P)	port_to_pullup_PGM[P]
 #define portInputRegister(P) ( (volatile uint8_t *)( pgm_read_word( port_to_input_PGM + (P))) )
-#define portModeRegister(P) port_to_mode_PGM[P];
+#define portModeRegister(P) port_to_mode_PGM[P]
 
 #define NOT_A_PIN 255
 #define NOT_A_PORT 255
