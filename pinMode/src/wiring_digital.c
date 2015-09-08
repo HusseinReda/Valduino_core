@@ -45,6 +45,7 @@ void pinMode(uint8_t pin, uint8_t mode)
 	if (mode == INPUT) { 
 		//uint8_t oldSREG = SREG;
         //cli();
+		DI();
         //FIXME: check this info -> Set all the ports by default PM as an input in the init function
 		*reg |= bit;
 		*out &= ~bit;
@@ -52,6 +53,7 @@ void pinMode(uint8_t pin, uint8_t mode)
 	} else if (mode == INPUT_PULLUP) {
 		//uint8_t oldSREG = SREG;
                 //cli();
+		DI();
 		*reg |= bit;
 		//*out |= bit;
 		*pull |= bit;
@@ -59,6 +61,7 @@ void pinMode(uint8_t pin, uint8_t mode)
 	} else {
 		//uint8_t oldSREG = SREG;
                 //cli();
+		DI();
 		*reg &= ~bit;
 		//SREG = oldSREG;
 	}

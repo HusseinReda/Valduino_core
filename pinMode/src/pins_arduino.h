@@ -24,11 +24,17 @@
 #define Pins_Arduino_h
 
 /*
+ * To define the PU include iodefine_ext.h
+ */
+#ifndef	IODEFINE_EXT_H
+#include "iodefine_ext.h"
+#endif
+
+/*
  * To define the P and PM include iodefine.h
  */
-#ifndef  __INTRINSIC_FUNCTIONS
+#ifndef	__IOREG_BIT_STRUCTURES
 #include "iodefine.h"
-#include "iodefine_ext.h"
 #endif
 
 /*
